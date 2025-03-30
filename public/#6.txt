@@ -1,0 +1,104 @@
+Started by GitHub push by jsalcario
+Obtained Jenkinsfile from git https://github.com/jsalcario/nodejs-helloworld-api.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/Desafios/Desafio2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Desafios/Desafio2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/jsalcario/nodejs-helloworld-api.git # timeout=10
+Fetching upstream changes from https://github.com/jsalcario/nodejs-helloworld-api.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/jsalcario/nodejs-helloworld-api.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision f5f0662d6817e008a78c4ee6dc087712b0e1cd1a (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f5f0662d6817e008a78c4ee6dc087712b0e1cd1a # timeout=10
+Commit message: "Create .gitkeep"
+ > git rev-list --no-walk cdcb212abdb824ad613010317ae413bac3efe41f # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+Ejecutar npm install
+[Pipeline] sh
++ npm install
+
+up to date, audited 368 packages in 3s
+
+45 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (3 low, 2 moderate, 5 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+Ejecutar npm test push
+[Pipeline] sh
++ npm test
+
+> nodejs-helloworld-api@1.0.0 test
+> jest --forceExit
+
+  console.log
+    Server is listening on port 3000
+
+      at Server.log (index.js:10:13)
+
+PASS ./index.test.js
+  GET /
+    ✓ responds with hello world message in JSON format (70 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.646 s, estimated 1 s
+Ran all test suites.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
