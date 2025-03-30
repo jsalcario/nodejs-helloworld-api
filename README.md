@@ -40,7 +40,9 @@ Nos ubicamos en el repositorio de github y vamos a Settings > Webhooks > addwebh
 
 ![imagen7](images/07.png)
 
-El job ya esta listo para usar, cada vez que se actualice y se haga un commit en la rama main un webhook se dispara y se registra en los Github Hook Log
+El job ya esta listo para usar, cada vez que se actualice y se haga un commit en la rama main un webhook se dispara y se registra en los Github Hook Log.
+
+cambios
 
 
 
